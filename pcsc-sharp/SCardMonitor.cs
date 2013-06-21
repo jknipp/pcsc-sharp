@@ -316,7 +316,8 @@ namespace PCSC
         ///         </list></para>
         /// </remarks>
         public void Start(string readerName) {
-            if (string.IsNullOrWhiteSpace(readerName)) {
+            if (string.IsNullOrEmpty(readerName) || string.IsNullOrEmpty(readerName.Trim()))
+            {
                 throw new ArgumentNullException("readerName");
             }
 
